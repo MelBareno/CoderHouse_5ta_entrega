@@ -99,6 +99,14 @@
      */
     --color-btn                     : var(--color-gray-6);
     --color-btn-text                : var(--color-black);
+    --color-btn-hover               : var(--color-gray-8);
+    --color-btn-hover-text          : var(--color-black);
+    
+    /* preloader
+     */
+     --color-preloader-bg            : var(--color-gray-19);
+     --color-loader                  : rgba(169, 249, 192, 0.733);
+     --color-loader-light            : rgba(255, 255, 255, 0.1);
 
     /* others
      */
@@ -372,7 +380,7 @@ td {
     "header header header"
     "nav main_body publicidad"
     "footer footer footer";
-    grid-template-rows: 10% auto 5%;
+    grid-template-rows: auto auto 5%;
     grid-template-columns: 20% auto 10px;
     column-gap: 2%;
     row-gap: 2%;
@@ -432,6 +440,7 @@ aside{
     padding : 0;
 }
 
+
 /* --------------------------------------------------------------------
  * ## mobile devices 
  * -------------------------------------------------------------------- */
@@ -453,7 +462,15 @@ aside{
     }
     
 }
-
+@media screen and (min-width: 992px) {
+    #grilla {
+      grid-template-areas:
+        "header header header"
+        "nav main_body publicidad"
+        "footer footer footer";
+    grid-template-columns: 20% auto auto ;
+    }
+}
 /* ===================================================================
  * # TYPOGRAPHY 
  *
@@ -605,6 +622,72 @@ img,
 }
 
 /* ===================================================================
+ * # FORM
+ *
+ *
+ * ------------------------------------------------------------------- */
+ fieldset {
+    border  : none;
+    padding : 0;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="password"],
+textarea,
+select {
+    --input-vpadding    : calc(((var(--input-height) - var(--input-line-height)) / 2) - 1px);
+    display             : block;
+    height              : var(--input-height);
+    padding             : var(--input-vpadding) calc(2.4rem - 1px);
+    border              : 0;
+    outline             : 0;
+    color               : var(--color-placeholder);
+    font-family         : var(--font-1);
+    font-size           : var(--text-sm);
+    font-size           : calc(var(--text-size) * 0.8889);
+    line-height         : var(--input-line-height);
+    max-width           : 100%;
+    background-color    : var(--color-gray-5);
+    border              : 1px solid transparent;
+    transition          : all 0.3s ease-in-out;
+    border-radius       : var(--border-radius);
+}
+
+textarea {
+    min-height : calc(8 * var(--space));
+}
+
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    color            : var(--color-black);
+    background-color : white;
+    box-shadow       : 0 0 5px var(--color-1);
+    border           : 1px solid var(--color-1-light);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    display : inline;
+}
+
+label>input[type="checkbox"],
+label>input[type="radio"] {
+    margin   : 0;
+    position : relative;
+    top      : 2px;
+}
+/* ===================================================================
  * # BUTTONS
  ------------------------------------------------------------------- */
 .btn,
@@ -632,6 +715,22 @@ input[type="button"] {
     background-color        : var(--color-btn);
     border                  : 2px solid var(--color-btn);
    }
+
+.btn:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus,
+.btn:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+    background-color : var(--color-btn-hover);
+    border-color     : var(--color-btn-hover);
+    color            : var(--color-btn-hover-text);
+    outline          : 0;
+}
 
 /* ------------------------------------------------------------------- 
  * ## theme-specific typography classes

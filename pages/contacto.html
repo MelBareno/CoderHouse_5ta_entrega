@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Rinconcito Verde | Contacto</title>
 	<link rel="stylesheet" href="../CSS/styles.css" />
+	<link rel="stylesheet" href="../css/animate.css" />
 	<link rel="icon" href="../assets/img/favicon/favicon.ico">
+    <script src="../css/wow.js"></script>
+    <script>
+      new WOW().init();
+	</script>
 </head>
 <body>
 	<div id="grilla">
@@ -51,11 +56,11 @@
 						<textarea placeholder="Consulta"></textarea>
 					</label> <br>
 					<label for="number"> Número de telefono:
-						<input type="number" placeholder="+59X XXXXXXXX"><br>
+						<input type="tel" placeholder="+59X XXXXXXXX"><br>
 					</label>
 					<div>¿Te gustaría recibir más información sobre nosotros?
 					<input type="checkbox" name="acepta" value="1"></div>
-					<input type="submit" value="Enviar consulta ">
+					<input type="submit" value="Enviar consulta" class="btn">
 				</form>
 			</article>
 		</section>
