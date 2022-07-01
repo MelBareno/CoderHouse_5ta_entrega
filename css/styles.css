@@ -377,11 +377,11 @@ td {
 #grilla{
     display: grid;
     grid-template-areas: 
-    "header header header"
-    "nav main_body publicidad"
-    "footer footer footer";
-    grid-template-rows: auto auto 5%;
-    grid-template-columns: 20% auto 10px;
+    "header header"
+    "nav main_body "
+    "footer footer";
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
     column-gap: 2%;
     row-gap: 2%;
 }
@@ -407,9 +407,6 @@ nav{
     grid-area: nav;
 }
 
-aside{
-    grid-area: publicidad;
-}
 /* row 
  */
 .row {
@@ -466,9 +463,9 @@ aside{
     #grilla {
       grid-template-areas:
         "header header header"
-        "nav main_body publicidad"
+        "nav main_body main_body"
         "footer footer footer";
-    grid-template-columns: 20% auto auto ;
+    grid-template-columns: auto auto auto ;
     }
 }
 /* ===================================================================
@@ -783,8 +780,8 @@ img.u-pull-left {
     position : absolute;
     top      : 0;
     left     : 0;
-    width    : 50%;
-    height   : 50%;
+    width    : 80%;
+    height   : 80%;
 }
 
 /* --------------------------------------------------------------------
@@ -858,10 +855,4 @@ footer {
     color            : rgba(255, 255, 255, 0.4);
     position         : relative;
 }
-
-.wrapper_footer {
-    display: grid;
-    grid-template-columns: repeat(4, 1.2fr);
-    column-gap: 20px;
-     }
 
